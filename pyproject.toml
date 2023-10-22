@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "specipy"
+version = "0.1.0"
+description = "A python toolset to drive emergent design by specification"
+authors = ["Marco De Bortoli <493257+debo@users.noreply.github.com>"]
+license = "Apache-2.0"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
