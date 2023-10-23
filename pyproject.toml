@@ -9,6 +9,33 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.8"
 
+[tool.poetry.dev-dependencies]
+black = "^23.10.0"
+isort = "^5.12.0"
+mypy = "^1.6.1"
+
+[tool.black]
+preview = true
+line-length = 120
+target-version = ['py311']
+
+[tool.isort]
+py_version = 38
+profile = "black"
+force_single_line = true
+src_paths = ["*/app", "*/tests"]
+
+[tool.mypy]
+python_version = "3.8"
+check_untyped_defs = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+no_implicit_optional = true
+show_error_codes = true
+warn_return_any = true
+warn_unused_ignores = true
+exclude = ["tests", "features"]
+
 
 [build-system]
 requires = ["poetry-core"]
