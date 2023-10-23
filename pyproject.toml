@@ -7,26 +7,27 @@ license = "Apache-2.0"
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = ">=3.8.1,<4.0"
 
-[tool.poetry.dev-dependencies]
+[tool.poetry.group.dev.dependencies]
 black = "^23.10.0"
+flake8 = "^6.1.0"
 isort = "^5.12.0"
 mypy = "^1.6.1"
 
-[tool.black]
+[tool.poetry.group.dev.dependencies.black]
 preview = true
 line-length = 120
-target-version = ['py311']
+target-version = ['py38']
 
-[tool.isort]
+[tool.poetry.group.dev.dependencies.isort]
 py_version = 38
 profile = "black"
 force_single_line = true
 src_paths = ["*/app", "*/tests"]
 
-[tool.mypy]
-python_version = "3.8"
+[tool.poetry.group.dev.dependencies.mypy]
+python_version = "3.8.1"
 check_untyped_defs = true
 disallow_untyped_defs = true
 disallow_incomplete_defs = true
@@ -35,7 +36,6 @@ show_error_codes = true
 warn_return_any = true
 warn_unused_ignores = true
 exclude = ["tests", "features"]
-
 
 [build-system]
 requires = ["poetry-core"]
